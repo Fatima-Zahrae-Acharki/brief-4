@@ -8,7 +8,7 @@ function Login (){
  const cookies = new Cookies()
 
     const[Data, setData] = useState([])
-    const[Nom, setNom] = useState([])
+    const[Name, setName] = useState([])
     const[Email, setEmail] = useState([])
     useEffect(()=>{
         
@@ -20,7 +20,7 @@ function Login (){
 
            })
     },[])
-    const handleChangeNom=(e)=>{
+    const handleChangeName=(e)=>{
         e.preventDefault()
        
         setNom(e.target.value)
@@ -33,13 +33,13 @@ function Login (){
      const  handleClick=(e)=>{
         e.preventDefault()
            let data = Data
-           let nom = Nom
+           let name = Name
            let email = Email
 
            data.map((value)=>{
 
-             if (nom == value.Nom_formateur && email==value.Email_formateur) {
-                cookies.set('idFormateur',value.id)
+             if (name == value.tutor_name && email==value.tutor_email) {
+                cookies.set('idTutor',value.id)
                 return navigate("/Dashbord")
 
               }
@@ -52,7 +52,7 @@ function Login (){
     return(
         <div>
             <form action="">
-                <input type="text" onChange={handleChangeNom} placeholder="Nom" /><br/>
+                <input type="text" onChange={handleChangeName} placeholder="Name" /><br/>
                 <input type="text" onChange={handleChangeEmail}  placeholder="Email" /><br />
                 <button onClick={handleClick}>Login</button>
                 

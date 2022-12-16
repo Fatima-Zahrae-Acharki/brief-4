@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\apprentice;
 use Illuminate\Http\Request;
 
 class Apprentice extends Controller
@@ -42,8 +42,8 @@ class Apprentice extends Controller
             "apprentice_email"=>$request->email,
             "apprentice_phone"=>$request->phone,
             "apprentice_CIN"=>$request->cin,
-            "birth_date"=>$request->date_naissance,
-            "apprentice_picture"=>$request->image,
+            "birth_date"=>$request->birth_date,
+            "apprentice_picture"=>$request->apprentice_picture,
 
           ])->save();
           return redirect('apprentice');

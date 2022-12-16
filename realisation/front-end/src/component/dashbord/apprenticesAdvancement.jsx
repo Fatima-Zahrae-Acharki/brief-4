@@ -28,7 +28,7 @@ selectBrief=(e)=>{
   axios.get("http://127.0.0.1:8000/api/BriefSelect/"+this.state.groupeId+"/"+e.target.value)
   .then(response=>{
      this.setState({
-        brief:response.data.avancemantBrief
+        brief:response.data.briefAdvancement
      })
   })
 
@@ -66,17 +66,17 @@ render(){
     return(
         <div>
 
-            {/*Selecte brief  */}
+            {/* brief select */}
           <select onChange={this.selectBrief} name="" id="">
             {this.state.ListBrief.map((value)=>
-            <option key={ value.id} value={ value.id}>  {value.Nom_du_brief}</option>
+            <option key={ value.id} value={ value.id}>  {value.brief_name}</option>
               
                 
              )}
              </select>
-            {/* Liste apprenant */}
+            {/* apprentices list */}
               {this.state.brief.map((value)=>
-                <li key={Math.random()}>{value.Prenom} {value.Nom} </li>
+                <li key={Math.random()}>{value.lName} {value.Nom} </li>
 
               )}
 

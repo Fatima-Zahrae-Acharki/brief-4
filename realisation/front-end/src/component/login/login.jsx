@@ -23,7 +23,7 @@ function Login (){
     const handleChangeName=(e)=>{
         e.preventDefault()
        
-        setNom(e.target.value)
+        setName(e.target.value)
       
     }
     const  handleChangeEmail=(e)=>{
